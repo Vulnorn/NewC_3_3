@@ -13,7 +13,6 @@ namespace NewC_3_3
             int minRandomNumbers = 1;
             int maxRandomNumbers = 100;
             int maxLocalNumbers;
-            int indexFirstNumbers = 0;
             int indexSecondNumber = 1;
             int indexPenultimateNumbers = lengthArray - 2;
             int indexLastNumbers = lengthArray - 1;
@@ -28,10 +27,8 @@ namespace NewC_3_3
 
             Console.Write($"\nВсе локальные максимумы текущего массива: ");
 
-            maxLocalNumbers = numbers[indexFirstNumbers];
-
-            if (maxLocalNumbers > numbers[indexSecondNumber])
-                Console.Write($"{maxLocalNumbers}, ");
+            if (numbers[0] > numbers[1])
+                Console.Write($"{numbers[0]}, ");
 
             for (int i = indexSecondNumber; i < indexLastNumbers; i++)
             {
@@ -41,10 +38,8 @@ namespace NewC_3_3
                     Console.Write($"{maxLocalNumbers}, ");
             }
 
-            maxLocalNumbers = numbers[indexLastNumbers];
-
-            if (maxLocalNumbers > numbers[indexPenultimateNumbers])
-                Console.Write($"{maxLocalNumbers}");
+            if (numbers[indexLastNumbers] > numbers[indexPenultimateNumbers])
+                Console.Write($"{numbers[indexLastNumbers]}");
 
             Console.ReadKey();
         }
