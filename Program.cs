@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace NewC_3_3
 {
@@ -11,9 +12,12 @@ namespace NewC_3_3
             int lengthArray = 30;
             int minRandomNumbers = 1;
             int maxRandomNumbers = 100;
-            int maxLocalNumbers;
-            int penultimateNumbers = lengthArray - 2;
-            int secondNumber = 1;
+            int maxLocalNumbers;           
+            int indexFirstNumbers = 0;
+            int indexSecondNumber = 1;
+            int indexPenultimateNumbers = lengthArray - 2;
+            int indexLastNumbers = lengthArray - 1;
+
 
             int[] numbers = new int[lengthArray];
 
@@ -28,18 +32,18 @@ namespace NewC_3_3
             for (int i = 0; i < numbers.Length; i++)
             {
 
-                if (i == 0)
+                if (i == indexFirstNumbers)
                 {
                     maxLocalNumbers = numbers[i];
 
-                    if (maxLocalNumbers > numbers[secondNumber])
+                    if (maxLocalNumbers > numbers[indexSecondNumber])
                         Console.Write($"{maxLocalNumbers}, ");
                 }
-                else if (i == lengthArray - 1)
+                else if (i == indexLastNumbers)
                 {
                     maxLocalNumbers = numbers[i];
 
-                    if (maxLocalNumbers > numbers[penultimateNumbers])
+                    if (maxLocalNumbers > numbers[indexPenultimateNumbers])
                         Console.Write($"{maxLocalNumbers}, ");
                 }
                 else
